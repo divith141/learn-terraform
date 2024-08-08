@@ -7,6 +7,13 @@ resource "aws_instance" "frontend" {
   }
 }
 
+resource "aws_route53_record" "frontend" {
+  zone_id = "Z043863937TBAZZ058716"
+  name    = "frontend.dev.kranthi.online"
+  type    = "A"
+  ttl     = 15
+  records = [aws_instance.frontend.private_ip]
+}
 
 resource "aws_instance" "mongo" {
   ami           = "ami-041e2ea9402c46c32"
