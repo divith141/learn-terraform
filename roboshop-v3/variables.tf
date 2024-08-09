@@ -1,0 +1,11 @@
+variable "instance_type" {
+  default = "t3.small"
+}
+
+variable "domain_name" {
+  default = "kranthi.online"
+}
+
+variable "components" {
+  default = ["frontend", "mongo", "catalogue"]
+}
